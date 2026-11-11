@@ -31,6 +31,10 @@ That's the entire install. The Python package talks to the local EnigmAgent REST
 
 ---
 
+<!-- impact-note:start -->
+<sub><strong>Efficiency and practical value.</strong> The reusable LlamaIndex ToolSpec and pipeline helpers centralize credential-placeholder handling, reducing the need to build a separate vault client for every tool. Their practical advantage is consistent integration with an existing local vault. Security depends on keeping resolved values inside trusted backend code, as explained in the <a href="https://github.com/Agnuxo1/EnigmAgent/blob/main/docs/THREAT_MODEL.md">threat model</a>.</sub>
+<!-- impact-note:end -->
+
 ## The problem (in LlamaIndex terms)
 
 When you build a LlamaIndex agent that needs to authenticate against a real API — GitHub, OpenAI, Stripe, your own backend — you face the same impossible choice every framework faces:
